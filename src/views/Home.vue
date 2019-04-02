@@ -1,18 +1,31 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Todos/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Todos from '@/components/Todos.vue';
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
-  }
+    Todos
+  },
+
+  // mounted() {
+  //   this.getData();
+  // },
+
+  // methods: {
+  //   getData() {
+  //      axios
+  //     .get('http://5c13e583a5e15f001345f63b.mockapi.io/api/demo/demo')
+  //     .then(response => {
+  //       console.log(response);
+  //     })
+  //   }
+  // }
 }
 </script>
