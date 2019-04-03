@@ -2,7 +2,7 @@
   <div class="todos">
     <h1>ll</h1>
     <div class="todos__content">
-      <div class="todos__item" v-for="(TodoItem, index) in getTodos" :key="index">
+      <div class="todos__item" v-for="TodoItem in getTodos" :key="TodoItem.id">
        {{ TodoItem.title }}
       </div>
     </div>
