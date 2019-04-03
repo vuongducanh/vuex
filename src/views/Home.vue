@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <AddTodo/>
     <Todos/>
   </div>
 </template>
@@ -7,25 +8,13 @@
 <script>
 // @ is an alias to /src
 import Todos from '@/components/Todos.vue';
+import AddTodo from '@/components/addTodo.vue';
 
 export default {
   name: 'home',
   components: {
-    Todos
+    Todos,
+    AddTodo
   },
-
-  // mounted() {
-  //   this.getData();
-  // },
-
-  // methods: {
-  //   getData() {
-  //      axios
-  //     .get('http://5c13e583a5e15f001345f63b.mockapi.io/api/demo/demo')
-  //     .then(response => {
-  //       console.log(response);
-  //     })
-  //   }
-  // }
 }
 </script>

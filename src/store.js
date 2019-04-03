@@ -6,24 +6,29 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    item: [
-    {
-      id: 1,
-      name: "item1"
-    },
-    {
-      id: 2,
-      name: "item2"
-    }
-  ]
+    todos: []
   },
   getters: {
-    getItem: (state) => state.item
+    getTodos: (state) => state.todos
   },
   mutations: {
-
+    setTodos: (state, todos) => (state.todos = todos),
+    newToto: (state, todo) => (state.todos.unshift(todo))
   },
   actions: {
+    async fetData({ commit }) {
+      const response = await axios.get(
+        'http://5c13e583a5e15f001345f63b.mockapi.io/api/listTodo/demo'
+      );
+      commit('setTodos',response.data);
+    },
 
+    async addTodo({ commit }, title) {
+      const response = await axios.post(
+        'http://5c13e583a5e15f001345f63b.mockapi.io/api/listTodo/demo',
+        { title, completed: false }
+      )
+      commit('newToto', response.data);
+    }
   }
 })
