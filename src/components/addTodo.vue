@@ -22,8 +22,10 @@ export default {
     ...mapActions(['addTodo']),
     handleSubmit(e) {
       e.preventDefault();
-      this.addTodo(this.item);
-      this.item = '';
+      if (this.item != '') {
+        this.addTodo(this.item);
+        this.item = '';
+      }
     }
   },
 }
