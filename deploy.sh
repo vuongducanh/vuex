@@ -13,6 +13,6 @@ git init
 git add -A
 git commit -m 'deploy'
 
-git push -f git@github.com/vuongducanh/vuex.git master:gh-pages
+git push -f https://github.com/vuongducanh/vuex.git master:gh-pages
 
 cd -
